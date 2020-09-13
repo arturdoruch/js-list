@@ -1,0 +1,23 @@
+{
+  "name": "@arturdoruch/list",
+  "description": "JavaScript support for pagination, sorting and filtering list items.",
+  "keywords": [],
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "@arturdoruch/event-dispatcher": "^1.0.1",
+    "@arturdoruch/event-registry": "^1.0.1",
+    "@arturdoruch/form": "^1.0.2",
+    "@arturdoruch/helper": "^1.0.1",
+    "@arturdoruch/util": "^1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arturdoruch/js-list"
+  },
+  "author": {
+    "name": "Artur Doruch",
+    "email": "arturdoruch@interia.pl"
+  },
+  "license": "MIT"
+}
