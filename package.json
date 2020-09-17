@@ -1,6 +1,6 @@
 {
   "name": "@arturdoruch/list",
-  "description": "JavaScript support for pagination, sorting and filtering list items.",
+  "description": "JavaScript support for pagination, sorting and filtering of list items.",
   "keywords": [],
   "version": "0.1.0",
   "type": "module",

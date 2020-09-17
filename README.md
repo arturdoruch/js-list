@@ -1,6 +1,6 @@
 # List
 
-JavaScript support for pagination, sorting and filtering list items.
+JavaScript support for pagination, sorting and filtering of list items.
 
 ## Installation
 
@@ -10,10 +10,14 @@ yarn add https://github.com/arturdoruch/js-list#^0.1
 
 ## Usage
 
-Setup `ListController` and `FilterFormController` for specific list. 
-
+Import CSS styles for styling filter form and item list.
 ```js
 import '@arturdoruch/list/styles/list.css';
+```
+
+Setup `ListController` and `FilterFormController` for a specific list. 
+
+```js
 import ListController from '@arturdoruch/list/lib/ListController';
 import FilterFormController from '@arturdoruch/list/lib/FilterFormController';
 
