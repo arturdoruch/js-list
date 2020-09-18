@@ -42,6 +42,59 @@ For displaying notice message and loader while getting list items set ProcessNot
 See files [ListController.js](lib/ListController.js) and [FilterFormController.js](lib/FilterFormController.js)
 for details of available methods and arguments.
 
+### FilterFormController
+
+The `FilterFormController` class controls the form filtering the list items. 
+Set if the item list, has a filter form.
+
+```js
+import FilterFormController from '@arturdoruch/list/lib/FilterFormController';
+
+const filterFormController = new FilterFormController(formSelector, {
+    // Options
+});
+```
+
+#### Constructor arguments
+    
+  * `formSelector` *string|HTMLFormElement|jQuery* HTMLFormElement or jQuery object, or CSS selector to the filter form.
+  * `options` *object*    
+     * `filterButtonSelector` *string (default: `button[type="submit"]`)* CSS selector to the button sending the form.
+     * `resetButtonSelector` *string (default: `button[type="reset"]`)* CSS selector to the button resetting form elements.
+     * `resetData` *object* The values of the form elements to set while resetting the form.
+     * `noResetFields` *array* The names of form elements which values should not be reset, when reset button is clicked.
+     * `filterAfterReset` *boolean (default: `true`)* Whether to filter list items after resetting the form.
+     * `resetSorting` *boolean* Whether to reset item list sorting, while filtering.
+       To omit this setting, in HTML code embed the following input element:
+       ```html
+       <input type="hidden" name="list__filter-form__reset-sorting[{filter form name}]" value="{0 or 1}">
+       ```
+
+#### Setting query parameter names
+        
+Your backend system uses some GET request query parameters for setting: page number, sorting and items list limit.
+The names of these parameter are necessary to be know in JavaScript code, in order to removing these parameters
+form the request query (when are not required), while filtering the list.
+
+To achieve this, in HTML code embed the input element, with value as encoded JSON with query parameter names
+
+```html
+<input type="hidden" name="list__query-parameter-names" value="{page: \"page value\", sort: \"sort value\", limit: \"limit value\"}">
+```        
+  
+or call global method `FilterFormController.setQueryParameterNames` with arguments:
+        
+ * `page` *string|object* A string with "page" query parameter name or object with all parameter names.
+ * `sort` *string* The "sort" query parameter name. Is required when "page" argument is a string.
+ * `limit` *string* The "limit" query parameter name. Is required when "page" argument is a string.
+            
+Example:                  
+```js
+import FilterFormController, {setQueryParameterNames} from '@arturdoruch/list/lib/FilterFormController';
+
+setQueryParameterNames('page', 'sort', 'limit');
+```
+        
 <!--
 ### ListController API
 
