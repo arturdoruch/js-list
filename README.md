@@ -50,9 +50,7 @@ Set if the item list, has a filter form.
 ```js
 import FilterFormController from '@arturdoruch/list/lib/FilterFormController';
 
-const filterFormController = new FilterFormController(formSelector, {
-    // Options
-});
+const filterFormController = new FilterFormController(formSelector, options);
 ```
 
 #### Constructor arguments
@@ -82,7 +80,7 @@ To achieve this, in HTML code embed the input element, with value as encoded JSO
 <input type="hidden" name="list__query-parameter-names" value="{page: \"page value\", sort: \"sort value\", limit: \"limit value\"}">
 ```        
   
-or call global method `FilterFormController.setQueryParameterNames` with arguments:
+or call global static method `FilterFormController.setQueryParameterNames()` with arguments:
         
  * `page` *string|object* A string with "page" query parameter name or object with all parameter names.
  * `sort` *string* The "sort" query parameter name. Is required when "page" argument is a string.
@@ -90,9 +88,9 @@ or call global method `FilterFormController.setQueryParameterNames` with argumen
             
 Example:                  
 ```js
-import FilterFormController, {setQueryParameterNames} from '@arturdoruch/list/lib/FilterFormController';
+import FilterFormController from '@arturdoruch/list/lib/FilterFormController';
 
-setQueryParameterNames('page', 'sort', 'limit');
+FilterFormController.setQueryParameterNames('page', 'sort', 'limit');
 ```
         
 <!--
