@@ -2,12 +2,12 @@
   "name": "@arturdoruch/list",
   "description": "JavaScript support for pagination, sorting and filtering of list items.",
   "keywords": [],
-  "version": "0.1.2",
+  "version": "0.2.0",
   "type": "module",
   "dependencies": {
     "@arturdoruch/event-dispatcher": "^1.0.1",
     "@arturdoruch/event-registry": "^1.0.1",
-    "@arturdoruch/form": "^1.0.2",
+    "@arturdoruch/form": "^1.2.0",
     "@arturdoruch/helper": "^1.0.1",
     "@arturdoruch/util": "^1.3"
   },
