@@ -19,16 +19,12 @@ Setup `ListController` and `FilterFormController` for a specific list.
 
 ```js
 import ListController from '@arturdoruch/list/lib/ListController';
-import FilterFormController from '@arturdoruch/list/lib/FilterFormController';
+import FilterForm from '@arturdoruch/list/lib/FilterForm';
 
-// Create FilterFormController (optionally) for controlling the form filtering the list items.
-const filterFormController = new FilterFormController('form[name="filter"]', {
-    // Options
-});
+// Create (optionally) FilterForm managing the form filtering the list items.
+const filterForm = new FilterForm('form[name="filter"]', options);
 
-const listController = new ListController('#list-container', filterFormController, {
-    // Options
-});
+const listController = new ListController('#list-container', filterForm, options);
 
 // Register listener called after updating the list.
 listController.addUpdateListener(function ($listContainer) {
