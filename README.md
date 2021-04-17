@@ -15,7 +15,7 @@ Import CSS styles for styling filter form and item list.
 import '@arturdoruch/list/styles/list.css';
 ```
 
-Setup `ListController` and `FilterFormController` for a specific list. 
+Setup `ListController` and `FilterForm` for a specific list. 
 
 ```js
 import ListController from '@arturdoruch/list/lib/ListController';
@@ -35,18 +35,18 @@ listController.addUpdateListener(function ($listContainer) {
 For displaying notice message and loader while getting list items set ProcessNoticer.
 [See description](https://github.com/arturdoruch/js-helper#ajax-setting-process-noticer).
 
-See files [ListController.js](lib/ListController.js) and [FilterFormController.js](lib/FilterFormController.js)
+See files [ListController.js](lib/ListController.js) and [FilterForm.js](lib/FilterForm.js)
 for details of available methods and arguments.
 
-### FilterFormController
+### FilterForm
 
-The `FilterFormController` class controls the form filtering the list items. 
+The `FilterForm` class controls the form filtering the list items. 
 Set if the item list, has a filter form.
 
 ```js
-import FilterFormController from '@arturdoruch/list/lib/FilterFormController';
+import FilterForm from '@arturdoruch/list/lib/FilterForm';
 
-const filterFormController = new FilterFormController(formSelector, options);
+const filterForm = new FilterForm(formSelector, options);
 ```
 
 #### Constructor arguments
@@ -76,7 +76,7 @@ To achieve this, in HTML code embed the input element, with value as encoded JSO
 <input type="hidden" name="list__query-parameter-names" value="{page: \"page value\", sort: \"sort value\", limit: \"limit value\"}">
 ```        
   
-or call global static method `FilterFormController.setQueryParameterNames()` with arguments:
+or call global static method `FilterForm.setQueryParameterNames()` with arguments:
         
  * `page` *string|object* A string with "page" query parameter name or object with all parameter names.
  * `sort` *string* The "sort" query parameter name. Is required when "page" argument is a string.
@@ -84,9 +84,9 @@ or call global static method `FilterFormController.setQueryParameterNames()` wit
             
 Example:                  
 ```js
-import FilterFormController from '@arturdoruch/list/lib/FilterFormController';
+import FilterForm from '@arturdoruch/list/lib/FilterForm';
 
-FilterFormController.setQueryParameterNames('page', 'sort', 'limit');
+FilterForm.setQueryParameterNames('page', 'sort', 'limit');
 ```
         
 <!--
@@ -98,7 +98,7 @@ FilterFormController.setQueryParameterNames('page', 'sort', 'limit');
     * `listContainer` HTMLElement|jQuery|string **required**
        <br>HTML element, jQuery object of CSS selector of the element holding the list items.
        
-    * `filterFormController` FilterFormController
+    * `filterForm` FilterForm
     
     * `options` object
        <br>Options for updating list items.
@@ -136,7 +136,7 @@ FilterFormController.setQueryParameterNames('page', 'sort', 'limit');
    * `listener` function **required**
    <br>Function receives arguments: "response", "requestUrl".
    
-### FilterFormController API   
+### FilterForm API   
 
 
 ## Examples of item list and filter form HTML markup
