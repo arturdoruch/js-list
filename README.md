@@ -18,8 +18,8 @@ import '@arturdoruch/list/styles/list.css';
 Setup `ListController` and `FilterForm` for a specific list. 
 
 ```js
-import ListController from '@arturdoruch/list/lib/ListController';
-import FilterForm from '@arturdoruch/list/lib/FilterForm';
+import ListController from '@arturdoruch/list/lib/ListController.js';
+import FilterForm from '@arturdoruch/list/lib/FilterForm.js';
 
 // Create (optionally) FilterForm managing the form filtering the list items.
 const filterForm = new FilterForm('form[name="filter"]', options);
@@ -44,7 +44,7 @@ The `FilterForm` class controls the form filtering the list items.
 Set if the item list, has a filter form.
 
 ```js
-import FilterForm from '@arturdoruch/list/lib/FilterForm';
+import FilterForm from '@arturdoruch/list/lib/FilterForm.js';
 
 const filterForm = new FilterForm(formSelector, options);
 ```
@@ -84,7 +84,7 @@ or call global static method `FilterForm.setQueryParameterNames()` with argument
             
 Example:                  
 ```js
-import FilterForm from '@arturdoruch/list/lib/FilterForm';
+import FilterForm from '@arturdoruch/list/lib/FilterForm.js';
 
 FilterForm.setQueryParameterNames('page', 'sort', 'limit');
 ```
